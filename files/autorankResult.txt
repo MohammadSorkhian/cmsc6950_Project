@@ -1,0 +1,36 @@
+RankResult(rankdf=
+                          meanrank     mean      std ci_lower ci_upper  \
+United States of America       1.2  60904.6     4444  49779.9  72029.3   
+India                          2.4  50669.6  2980.92  43207.4  58131.8   
+Brazil                         2.4  41779.8    19181 -6236.17  89795.8   
+South Africa                   4.4   9825.4  2458.42  3671.22  15979.6   
+Colombia                       4.6   8502.8  1118.75  5702.22  11303.4   
+Mexico                         6.4   6032.8  922.567  3723.33  8342.27   
+Russian Federation             7.2   5555.8  145.441  5191.72  5919.88   
+Argentina                      8.2   5095.2  694.804  3355.89  6834.51   
+Peru                           8.2   4944.4  652.125  3311.93  6576.87   
+Bangladesh                    10.0   2742.2  291.552  2012.35  3472.05   
+
+                         effect_size   magnitude  
+United States of America           0  negligible  
+India                        2.70492       large  
+Brazil                       1.37368       large  
+South Africa                 14.2236       large  
+Colombia                     16.1713       large  
+Mexico                       17.0973       large  
+Russian Federation           17.6042       large  
+Argentina                    17.5471       large  
+Peru                         17.6195       large  
+Bangladesh                   18.4693       large  
+pvalue=2.4599881912495725e-06
+cd=6.058061530516892
+omnibus=friedman
+posthoc=nemenyi
+all_normal=True
+pvals_shapiro=[0.6602116823196411, 0.6494571566581726, 0.5465297102928162, 0.07757101207971573, 0.5258612036705017, 0.6906743049621582, 0.785720944404602, 0.7452430129051208, 0.5881111025810242, 0.3856677711009979]
+homoscedastic=False
+pval_homogeneity=4.899766840771038e-21
+homogeneity_test=bartlett
+alpha=0.05
+alpha_normality=0.005
+num_samples=5)
