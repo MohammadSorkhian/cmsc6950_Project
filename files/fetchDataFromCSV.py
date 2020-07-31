@@ -18,5 +18,10 @@ df_NewCasesLastDaysTop = df_NewCasesLastDays[list_TopCountriesName]
 se_NewCasesLastDaysTopMean = df_NewCasesLastDaysTop.mean()
 se_NewCasesLastDaysTopMean.plot(kind='bar', y='Number of New Cases per Day', title=f'Top {numTopCountires} countries in last {numLastDays} days')
 plt.savefig('TopCountries.png')
-plt.show()
 res = autorank(df_NewCasesLastDaysTop, alpha=0.05, verbose=False)
+plot_stats(res)
+plt.savefig('autorank.png')
+f_result = open('result.txt','w')
+f_result.write(str(res))
+f_result.close()
+
