@@ -22,5 +22,6 @@ have higest rates in new Covid-19 cases
 
 ## Finally execute this command
 ```
+    * cd cmsc6950_Project
     * make -f Makefile
 ```
