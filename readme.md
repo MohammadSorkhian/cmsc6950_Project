@@ -1,6 +1,8 @@
 # Introduction
 ```
-This program uses autorank library to compare countries worldwide which have higest rates in new Covid-19 cases
+This program uses autorank library
+to compare countries worldwide which 
+have higest rates in new Covid-19 cases
 ```
 --- 
 # Instruction
