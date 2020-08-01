@@ -1,13 +1,15 @@
 
-main.pdf: outputImages_Text
-	cd files && pdflatex main.tex
+main.pdf: files/main.tex files/images/autorank.png files/images/TopCountries.png files/autorankResult.txt files/main.tex
+	cd files && latexmk -pdf main.tex	
 
-outputImages_Text: clearData covid_19_WHO
+files/images/autorank.png: files/WHO-COVID-19-global-data.csv
+	cd files/images && python3 fetchDataFromCSV.py
+
+files/images/TopCountries.png: files/WHO-COVID-19-global-data.csv
+	cd files/images && python3 fetchDataFromCSV.py
+
+files/autorankResult.txt: files/WHO-COVID-19-global-data.csv
 	cd files && python3 fetchDataFromCSV.py
 
-
-covid_19_WHO:
+files/WHO-COVID-19-global-data.csv:
 	cd files && wget https://covid19.who.int/WHO-COVID-19-global-data.csv
-
-clearData:
-	cd files && rm -f *.csv*
