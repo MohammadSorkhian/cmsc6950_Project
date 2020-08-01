@@ -3,18 +3,18 @@ This program uses autorank library to compare countries worldwide which have hig
 
 ## Instruction
 Please install the following first:
-'''
+
 pip3 install pandas
 pip3 install matplotlib
 pip3 install autorank
 sudo apt install texlive -latex -base
-'''
+
 
 Then clone the repository:
-'''
+
 git clone https://github.com/MohammadSorkhian/cmsc6950_Project.git
-'''
+
 
 Finally execute this command
-'''
+
 make -f Makefile
