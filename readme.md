@@ -24,4 +24,6 @@ have higest rates in new Covid-19 cases
 ```
     * cd cmsc6950_Project
     * make -f Makefile
+    * make almost_clean   (To reproduce PDF report)
+    * make clean   (To download new .csv file and reproduce the PDF report from scratch)
 ```
