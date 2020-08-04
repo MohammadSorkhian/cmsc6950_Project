@@ -1,3 +1,7 @@
+# CMSC-6950 Project
+# autorank [repo](https://github.com/sherbold/autorank)
+# Mohammad Sorkhian
+---
 # Introduction
 ```
 This program uses autorank library
