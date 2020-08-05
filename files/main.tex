@@ -15,14 +15,49 @@
 
 \chapter{Introduction}
 \section{What is \textbf{autorank}}
-Autorank is a simple Python package with one task: simplify the comparison between (multiple) paired populations. The performance measures on each data set are then the paired samples, the difference in the central tendency (e.g., the mean or median) can be used to rank the different algorithms.
+Autorank is a simple Python package with one task: 
+simplify the comparison between (multiple) paired populations. 
+The performance measures on each data set are then the paired samples, 
+the difference in the central tendency (e.g., the mean or median) 
+can be used to rank the different algorithms.
 
-The distribution of the populations must be analyzed with the Shapiro-Wilk test for normality and, depending on the normality with Levene's test or Bartlett's tests for homogeneity of the data. All this is already quite complex. This does not yet account for the adjustment of the significance level in case of repeated tests to achieve the desired family-wise significance. \\Additionally, not only the tests should be conducted, but good reporting of the results also include confidence intervals, effect sizes, and the decision of whether it is appropriate to report the mean value and standard deviation, or whether the median value and the median absolute deviation is more appropriate.
+The distribution of the populations must be analyzed with the Shapiro-Wilk test for normality and, 
+depending on the normality with Levene's test or Bartlett's tests for homogeneity of the data. 
+All this is already quite complex. This does not yet account for the adjustment of the 
+significance level in case of repeated tests to achieve the desired family-wise significance. 
+\\Additionally, not only the tests should be conducted, but good reporting of the results also 
+include confidence intervals, effect sizes, and the decision of whether it is appropriate to 
+report the mean value and standard deviation, or whether the median value and 
+the median absolute deviation is more appropriate.
 
-The goal of Autorank is to simplify the statistical analysis for non-experts. Autorank takes care of all of the above with a single function call. Additional functions allow the generation of appropriate plots, result tables, and even of a complete latex document. All that is required is the data about the populations is in a Pandas dataframe
+The goal of Autorank is to simplify the statistical analysis for non-experts. 
+Autorank takes care of all of the above with a single function call. 
+Additional functions allow the generation of appropriate plots, result tables, 
+and even of a complete latex document. All that is required is the data about 
+the populations is in a Pandas dataframe.
 
-\section{Practical implementation of \textbf{autorank}}
-We have benefited this library to compare different countries worldwide in terms of their new \textit{Covid-19} detected cases and will present ten countries with highest volume in last month.
+\section{What is the problem?}
+We would like to compare top countries in terms of new detected \textit{Covid-19} cases and 
+for better comparison and produce a comprehensive report, we have used this tool.  
+
+\section{Data source}
+For this comparison, we have used the \textit{Covid-19} data from WHO and 
+have extracted the part of the data that we want to feed the autorank.
+\\ \url{https://covid19.who.int/WHO-COVID-19-global-data.csv}
+
+\section{Description of workflow}
+\begin{itemize}
+  \item Imported pandas, matplotlib.pyplot and autorank libraries.
+  \item Downloaded the data with "wget" form the WHO website and read the file into a dataframe.
+  \item Grouped the database by "country".
+  \item Made a series for each country based on its new \textit{Covid-19} detected cases and converted it into a dataframe.
+  \item Extracted top countries based on their total new detected cases.
+  \item Used matplotlib to plot the mean value of these top countries and save it.
+  \item Used autorank to make an analytical report.
+  \item Used autorank built-in functions to plot and print the result.
+  \item Used LaTex to creat report PDF.
+  \item Created Makefile to automate this procedure.
+\end{itemize}
 
 \chapter{Graphs}
 \section{autorank Graph}
@@ -45,6 +80,7 @@ In this section we see the autorank plot
 
 \chapter{autorank Reports}
  \verbatiminput{autorankReport.txt}
+
  \begin{abstract}
   autorank is a simple Python package with one task: simplify the comparison between (multiple) paired populations. This is, for example, required if the performance different machine learning algorithms or simulations should be compared on multiple data sets. The performance measures on each data set are then the paired samples, the difference in the central tendency (e.g., the mean or median) can be used to rank the different algorithms. In \ref{fig:autorank} you can see one output sample of this library
  \end{abstract}
