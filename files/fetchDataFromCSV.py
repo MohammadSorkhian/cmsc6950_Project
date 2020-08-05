@@ -22,10 +22,7 @@ plt.ylabel('Number of New Cases per day')
 plt.title(f'Top {numTopCountires} countries in last {numLastDays} days in terms of detected new Covid-19 cases')
 plt.tight_layout()
 plt.savefig('images/TopCountries.png')    # Save the plotted figure
-res = autorank(df_NewCasesLastDaysTop, alpha=0.05, verbose=False)    # Calculate autorank for these top countries
-plot_stats(res)    # Utilise aoutorank built-in plotting function  
+result = autorank(df_NewCasesLastDaysTop, alpha=0.05, verbose=False)    # Calculate autorank for these top countries
+plot_stats(result)    # Utilise aoutorank built-in plotting function  
 plt.savefig('images/autorank.png')
-f_result = open('autorankResult.txt','w')    # Save the result(res) in a txt file
-f_result.write(str(res))
-f_result.close()
-
+create_report(result)    # Print report
