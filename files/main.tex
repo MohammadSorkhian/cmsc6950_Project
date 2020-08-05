@@ -15,20 +15,10 @@
 
 \chapter{Introduction}
 \section{What is \textbf{autorank}}
-Autorank is a simple Python package with one task: 
-simplify the comparison between (multiple) paired populations. 
+Autorank simplify the comparison between (multiple) paired populations. 
 The performance measures on each data set are then the paired samples, 
 the difference in the central tendency (e.g., the mean or median) 
 can be used to rank the different algorithms.
-
-The distribution of the populations must be analyzed with the Shapiro-Wilk test for normality and, 
-depending on the normality with Levene's test or Bartlett's tests for homogeneity of the data. 
-All this is already quite complex. This does not yet account for the adjustment of the 
-significance level in case of repeated tests to achieve the desired family-wise significance. 
-\\Additionally, not only the tests should be conducted, but good reporting of the results also 
-include confidence intervals, effect sizes, and the decision of whether it is appropriate to 
-report the mean value and standard deviation, or whether the median value and 
-the median absolute deviation is more appropriate.
 
 The goal of Autorank is to simplify the statistical analysis for non-experts. 
 Autorank takes care of all of the above with a single function call. 
