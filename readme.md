@@ -11,12 +11,17 @@ have higest rates in new Covid-19 cases
 --- 
 # Instruction
 
-## Please install the following libraries:
+## Installation:
 ```
+    * sudo apt install git
+    * sudo apt install make
+    * sudo apt install python3-pip
+    * sudo apt install texlive-latex-base
+    * sudo apt-get install -y latexmk 
     * pip3 install pandas
     * pip3 install matplotlib
     * pip3 install autorank
-    * sudo apt install texlive -latex -base
+    
 ```
 
 ## Then clone the repository:
