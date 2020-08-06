@@ -1,20 +1,28 @@
 
-main.pdf: files/main.tex files/images/autorank.png files/images/TopCountries.png files/autorankReport.txt
-	cd files && latexmk -pdf main.tex	
+main.pdf: files/main.tex files/images/autorank.png files/autorankReport.txt files/images/TopCountries.png files/images/TopCountriesCompare.png
+	cd files && latexmk -pdf main.tex && mv main.pdf ../
 
-files/images/autorank.png: files/fetchDataFromCSV.py files/WHO-COVID-19-global-data.csv
-	cd files && python3 fetchDataFromCSV.py
-
-files/images/TopCountries.png: files/fetchDataFromCSV.py files/WHO-COVID-19-global-data.csv
-	cd files && python3 fetchDataFromCSV.py
-
-
-files/autorankReport.txt: files/fetchDataFromCSV.py files/WHO-COVID-19-global-data.csv
-	cd files && python3 fetchDataFromCSV.py > temp.txt
+files/autorankReport.txt: files/autorank_report.py files/df_newCasesLastDays.csv
+	cd files && python3 autorank_report.py > temp.txt
 	cd files && fold -w60 temp.txt > autorankReport.txt && rm -f temp.txt
 
+files/images/autorank.png: files/autorank_report.py files/df_newCasesLastDays.csv
+	cd files && python3 autorank_report.py > temp.txt
+	cd files && fold -w60 temp.txt > autorankReport.txt && rm -f temp.txt
+
+files/images/TopCountriesCompare.png: files/highest_details.py files/df_newCasesLastDays.csv files/df_newCasesLastPeriod.csv
+	cd files && python3 highest_details.py
+
+files/images/TopCountries.png : files/highest_details.py files/df_newCasesLastDays.csv files/df_newCasesLastPeriod.csv
+	cd files && python3 highest_details.py
+
+files/df_newCasesLastDays.csv: files/fetchDataFromCSV.py files/WHO-COVID-19-global-data.csv
+	cd files && python3 fetchDataFromCSV.py
+
+files/df_newCasesLastPeriod.csv: files/fetchDataFromCSV.py files/WHO-COVID-19-global-data.csv
+	cd files && python3 fetchDataFromCSV.py
+
 files/WHO-COVID-19-global-data.csv:
-	make clean
 	cd files && wget https://covid19.who.int/WHO-COVID-19-global-data.csv
 	
 	

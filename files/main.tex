@@ -31,9 +31,9 @@ We would like to compare top countries in terms of new detected \textit{Covid-19
 for better comparison and produce a comprehensive report, we have used this tool.  
 
 \section{Data source}
-For this comparison, we have used the \textit{Covid-19} data from WHO and 
+For this comparison, we have used the \textit{Covid-19} data from WHO 
+\footnote{\url{https://covid19.who.int/WHO-COVID-19-global-data.csv}}and 
 have extracted the part of the data that we want to feed the autorank.
-\\ \url{https://covid19.who.int/WHO-COVID-19-global-data.csv}
 
 \section{Description of workflow}
 \begin{itemize}
@@ -59,12 +59,22 @@ In this section we see the autorank plot
     \label{fig:autorank}
 \end{figure} 
 
-\section{matplotlib Garaph}
- In this section we see the top countries plot
+\section{matplotlib Bar Garaph}
+ In this section we see the top countries plot. 
+ In this plot I have compared their last month with a month before last.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{TopCountriesCompare.png}
+    \caption{Countries with highest rate of new \textit{Covid-19} detected cases in last month}
+    \label{fig:TopCountriesCompare}
+\end{figure}
+
+\section{matplotlib Line Garaph} 
+ In this plot we can see the detail of last month detected Covid-19 in top countries.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{TopCountries.png}
-    \caption{Countries with highest rate of new \textit{Covid-19} detected cases}
+    \caption{Countries with highest rate of new \textit{Covid-19} detected cases in detail}
     \label{fig:TopCountries}
 \end{figure}
 
@@ -74,7 +84,9 @@ In this section we see the autorank plot
  \begin{abstract}
   autorank is a simple Python package with one task: simplify the comparison between (multiple) paired populations. This is, for example, required if the performance different machine learning algorithms or simulations should be compared on multiple data sets. The performance measures on each data set are then the paired samples, the difference in the central tendency (e.g., the mean or median) can be used to rank the different algorithms. In \ref{fig:autorank} you can see one output sample of this library
  \end{abstract}
- 
+
+\begin{thebibliography}{9}
+\bibitem{latexcompanion} 
 @article{Herbold2020,
   doi = {10.21105/joss.02173},
   url = {\url{https://doi.org/10.21105/joss.02173}},
@@ -86,7 +98,7 @@ In this section we see the autorank plot
   author = {Steffen Herbold},
   title = {Autorank: A Python package for 
   automated ranking of classifiers},
-  journal = {Journal of Open Source Software}
-}
+  journal = {Journal of Open Source Software}}
+\end{thebibliography}
 
  \end{document}
