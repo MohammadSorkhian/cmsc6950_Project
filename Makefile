@@ -1,5 +1,7 @@
+FIGURES = files/images/autorank.png files/images/TopCountries.png files/images/TopCountriesCompare.png
 
-main.pdf: files/main.tex files/images/autorank.png files/autorankReport.txt files/images/TopCountries.png files/images/TopCountriesCompare.png
+
+main.pdf: files/main.tex  files/autorankReport.txt $(FIGURES)
 	cd files && latexmk -pdf main.tex && mv main.pdf ../
 
 files/autorankReport.txt: files/autorank_report.py files/df_newCasesLastDays.csv
